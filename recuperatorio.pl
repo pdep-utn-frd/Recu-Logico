@@ -54,7 +54,6 @@ masDeUnPrograma(Conductor):-
 conPrimiciasDeOtroConductor(Programa):-
         programa(Programa,_),
         primicia(_,_,Programa),
-        forall((primicia(Protagonista,_,Programa),
-        (conduce(Programa,Conductor))),
+        forall((primicia(Protagonista,_,Programa),conduce(Programa,Conductor)),
         Protagonista \= Conductor).
 
