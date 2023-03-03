@@ -51,8 +51,9 @@ masDeUnPrograma(Conductor):-
 %Punto 4
 % Se quiere saber los programas donde todas sus primicias son de conductores de otros programas de chimentos. 
 
-conPrimiciasDeOtroConductor(Programa):-
-        programa(Programa,_),
+conPrimiciaDeotrosConducs(Programa):-
         primicia(_,_,Programa),
-        forall((primicia(Protagonista,_,Programa),(conduce(Programa,Conductor))),Protagonista \= Conductor).
+        programa(Programa1,_),
+        forall(primicia(Protag,_,Programa),conduce(Programa1,Protag)),
+        Programa \= Programa1.
 
